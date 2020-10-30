@@ -1452,6 +1452,15 @@ max-width: 1000px;
     .animation > img {
         max-width: 500px;
     }
+.underMenuMob::before {
+       content: ">";
+       position: absolute;
+       width: 10px;
+       height: 10px;
+       top: 0;
+       left: 80%;
+       color: #fff;
+   }
     .gallery {
         width: 300px;
     }

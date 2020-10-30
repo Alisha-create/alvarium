@@ -1587,6 +1587,6 @@ max-width: 1000px;
         display: none;
     }
 	   .underMenuMob::before {
-       right: 20%;
+       left: 70%;
    }
    }

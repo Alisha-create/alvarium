@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>AlvariumSoft</title>
+</head>
+<body>
+    <header id="header">
+        <div class="header clearfix">
+          <div class="logo">
+              <img src="image/logo1.png" alt="logo">
+          </div>
+
+    <button class="btn"> <a href="#mobMenu" onclick="openbox('mobMenu'); return false">
+            <svg width="33" height="28" viewBox="0 0 33 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="33" y1="14" x2="11" y2="14" stroke="#FFC72C" stroke-width="2"/>
+              <line x1="33" y1="27" x2="22" y2="27" stroke="#FFC72C" stroke-width="2"/>
+              <line x1="33" y1="1" y2="1" stroke="#FFC72C" stroke-width="2"/>
+              </svg>
+          </a>
+        </button>
+<div id="mobMenu"  style="display: none;">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Who we are</a></li>
+    <li class="underMenuMob" ><a href="#" onclick="openbox('secondMob'); return false">What we do</a>
+      <ul class="secondmenuMob" id="secondMob" style="display: none;">
+        <li><a href="#">Dedicated team</a></li>
+        <li><a href="#">Team Extension</a></li>
+      </ul>    
+    </li>
+    <li><a href="#">Case study</a></li>
+    <li><a href="#">Insights</a></li>
+    <li ><a class="menu-item btn-quote popup_link" href="#popup">Get a quote</a></li>
+  </ul>
+  <div class="info">
+    <a href="mailto:max.linnik@alvariumsoft.com">max.linnik@alvariumsoft.com</a>
+    <p>+1(513)7254767</p>
+  </div>
+  <div class="socialAlvarium">
+    <a href="#"><img src="image/fb.png" alt="facebook"></a>
+    <a href="#"><img src="image/in.png" alt="linkedIn"></a>
+    <p>© 2020 AlvariumSoft</p>
+  </div>
+</div>
+
+      
+          <ul id ="menu"> 
+              <li ><a class = " menu-item" href="#">Who we are</a></li>
+              <li class="undermenu"><a class="menu-item " href="#">What we do</a>
+                <ul class="secondmenu">
+                  <li><a href="#">Dedicated team</a></li>
+                  <li><a href="#">Team Extension</a></li>
+                </ul>
+              </li>
+              <li ><a class="menu-item" href="#">Case study</a></li>
+              <li ><a class="menu-item" href="#">Insights</a></li>
+              <li ><a class="menu-item btn-quote popup_link" href="#popup">Get a quote</a></li>
+          </ul>
+      </div>
+      
+     <div id="popup" class="popup">
+       <a href="#header" class="popup_area"></a>
+       <div class="popup_body">
+         <div class="popup_content">
+         
+            <a href="#header" class="popup_close">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="25" height="25" viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+             </a>
+           <div class="popup_text">
+             <p>Free consultation</p>
+             <div class="question">
+              <h3>Want a quote?</h3>
+              <h3>Get a free consultation</h3>
+             </div>
+            
+           </div>
+           <div class="popuptitle">
+             <form class="popup_form">
+             <label for="name">Name</label>
+             <input class="name" type="text" name="name">
+                <label for="email">Email</label>
+                <input class="email" type="email" name="email">
+               <label for="phone">Phone number</label>
+               <input  class="phone" type="tel" name="customerPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+             <button type="Submit" class="submit">Send a request</button>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+    </header>
+
+    <div class="animation" style="overflow: hidden;">
+      <img src="image/animation.png" alt="person">
+    </div>
+    <div class="wrapper">
+      <div class="title">
+        <h1 class="bigText anim-item">Who we are</h1>
+        <p class="smallText"><a href="#">Who we are</a></p>
+        <div class="ourTeam">
+          <p>our team</p>
+        </div>
+      </div>
+
+    <div id="carousel" class="carousel">
+      <div class="gallery">
+        <button class="arrow prev"><img src="image/Component1.png" alt=""></button>
+    <ul class="slider">
+      <li><img src="image/photo_5510.png" alt=""></li>
+      <li><img src="image/photo5522.png" alt=""></li>
+      <li><img src="image/photo_5510.png" alt=""></li>
+      <li><img src="image/photo5522.png" alt=""></li>
+      <li><img src="image/photo_5510.png" alt=""></li>
+    </ul>
+    <button class="arrow next"><img src="image/Component2.png" alt=""></button>
+    </div>
+   
+    </div>
+
+    </div>
+  <div class="wrapper2">
+    <div class="title2">
+      <h1 class="bigText anim-item">What <br> we <br> do</h1>
+      <p class="smallText">What <br> we <br> do</What></p>
+    </div>
+   <div class="blockPhoto">
+     <div class="firstphoto"> 
+       <p>Dedicated Team</p>
+      <a href="#" > <img src="image/DSC_5495.png" alt="team"></a>
+     </div>
+      
+     <div class="secondphoto">
+       <p>Team Extension</p>
+      <a href="#"> <img src="image/DSC_5506.png" alt="people"></a>
+     </div>
+   </div>
+ 
+  </div>
+ <div class="wrapper3">
+<h2>Technologies we use</h2>
+<h3 class="bigText anim-item">Web</h3>
+<div class="techno">
+  <div class="front">
+    <h4>Front-end</h4>
+    <ul>
+      <p>Javascript</p>
+      <li class="react">React</li>
+      <li class="vue">Vue.JS</li>
+      <li class="angular">Angular</li>
+    </ul>
+  </div>
+  <div class="back">
+    <h4>Back-end</h4>
+    <div>
+      <ul>
+        <p>Python</p>
+        <li class="flask">Flask</li>
+        <li class="tornado">Tornado</li>
+        <li class="django">Django</li>
+      </ul>
+      <ul>
+        <p>PHP</p>
+        <li class="laravel">Laravel</li>
+        <li class="symfony">Symfony</li>
+        <li class="yii">Yii2</li>
+      </ul>
+    </div>
+    <ul class="etc">
+      <li class="node">Node.JS</li>
+      <li class="apache">Apache</li>
+    </ul>
+  </div>
+  <div class="mobile">
+    <h3 class="bigText anim-item">Mobile</h3>
+    <h6>IOS</h6>
+    <p class="swift">Swift</p>
+    <h6>Cross-platform</h6>
+    <p class="react">React Native</p>
+    <p class="flutter">Flutter</p>
+    <h6>Android</h6>
+    <p class="java">Java</p>
+    <p class="kotlin">Kotlin</p>
+  </div>
+</div>
+<div class="design">
+  <h3 class="bigText anim-item">Design</h3>
+  <p class="figma">Figma</p>
+  <p class="photoshop">Photoshop</p>
+  <p class="illustrator">Illustrator</p>
+</div>
+ </div>
+ <div class="wrapper4">
+  <h1 class="bigText anim-item">19 projects</h1>
+  <h2>Industries we are proficient</h2>
+  <div class="industries">
+    <div  class="column">
+      <div class="commerce">
+        <p>e-commerce</p>
+        <img   src="image/photo-e-commerce.png" alt="commerce">
+      <div>
+        <p><a href="#">+Object</a></p>
+        <p><a href="#">Wearwolf</a></p>
+      </div>
+      </div>
+      <div class="health">
+        <p>healthcare</p>
+        <img  src="image/photo-Healthcare.png" alt="hospital"> 
+        <div>
+          <p><a  style="text-transform: uppercase;" href="#">fdoctor</a></p>
+        </div>
+      </div>
+     </div>
+   <div  class="column2">
+    <div>
+      <p>travel</p>
+      <img  src="image/photo-travel.png" alt="travel">
+      <div style="height: 99%;">
+        <p><a href="#">Hotel Hunter</a></p>
+        <p><a href="#">Mountains Hotel</a></p>
+      </div>
+    </div>
+    <div>
+      <p>e-learning</p>
+      <img  src="image/photo-e-learning.png" alt="study"> 
+      <div>
+        <p><a href="#">Crossculture2go</a></p>
+      </div>
+    </div>
+   </div>
+   <div  class="column3">
+    <div>
+      <p>marketplace</p>
+      <img  src="image/photo-market.png" alt="market">
+      <div>
+        <p><a href="#">GruzzLife</a></p>
+      </div>
+    </div>
+    <div>
+      <p>real estate</p>
+      <img  src="image/photo-real estate.png" alt="estate">
+      <div style="width: 100%; height: 99%;">
+        <p><a href="#">Compass</a></p>
+        <p><a href="#">Z-Yachting & Golf-Estates</a></p>
+      </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="wrapper5">
+   <div class="title">
+     <h1 class="bigText anim-item">Case study</h1>
+     <p class="smallText"><a href="#">Case study</a></p>
+   </div>
+   <div class="case">
+     <div>
+       <h4>+Object</h4>
+       <p>Reflect your soul in a mirror</p>
+     </div>
+     <div>
+       <img style="display: block;" src="image/+object.png" alt="house">
+       <img style="width: 100%; margin-top:5px;" src="image/obj.png" alt="house">
+     </div>
+   </div>
+ </div>
+ <div class="wrapper6">
+   <div class="title6">
+     <h2>What our clients say</h2>
+     <p>What our clients say</p>
+   </div>
+
+  <div class="ourClients">
+    <p>our clients</p>
+  </div>
+ 
+  <div class="comments " id="comments">
+    <div class="comment" id="comment">
+      <div class="person">
+        <div><img src="image/Johannes.png" alt="client"></div>
+        <div>
+          <p>Name: Johannes Klemeyer</p>
+          <p>Company: Globiana</p>
+          <p>Title: CEO, EMAE operations and Co-founder</p>
+          <p>Country: Germany</p>
+          <p>Project name: Crossculture2go</p>
+        </div>
+      </div>
+      <p>
+        I'd like to recommend AlvariumSoft team. Andriy and Sergiy have been
+    helping to improve some of our products for almost 4 months now and what I really like is
+    the fact that they not only deliver a great job based on our requirements, but they also
+    provide us with their vision of how to improve the product even further. I'm absolutely
+    satisfied with the work they have done so far and I look forward to continuing our proven
+    cooperation.
+    </p>
+    </div>
+
+    <div class="comment">
+      <div class="person">
+        <div><img src="image/John.png" alt="customer"></div>
+        <div>
+          <p>Name: Mason Phillpot</p>
+          <p>Company: Plusobject</p>
+          <p>Title: Co-founder && CCO</p>
+          <p>Country: UK</p>
+          <p>Project name: +Object</p>
+        </div>
+      </div>
+      <p>
+        AlvariumSoft showed real expertise and confident vision in UI/UX design. I needed to create
+        a really great web catalog for my company's production. Their designer demonstrated the
+        highest level of vision and understanding I had ever seen. Actually, I had something in
+        mind, but describing it was a problem for me. The designer caught my unclear thoughts and
+        did the great concept. Working with these guys was a great pleasure for me. 
+    </p>
+    </div>
+  </div>
+ </div>
+
+ <div class="wrapper7">
+   <h1 class="bigText anim-item">Blog</h1>
+   <div class="articles">
+    <div class="article">
+      <div>   <img src="image/picture1.png" alt="work"></div>
+   
+       <div class="author">
+    <p>Igor Shiyan</p>
+    <p>“We are thrilled to have been chosen as one of the leading software development providers in Ukraine!” – Andriy Petrenko, CEO ...</p>
+    <a href="#">Learn more></a>
+</div>
+  </div>
+
+  <div class="article">
+    <div>   <img src="image/picture2.png" alt="robot"></div>
+ 
+     <div class="author">
+  <p>Igor Shiyan</p>
+  <p>Nowadays marketplaces are very popular among users. It's comfortable to find thing you need in several clicks. We've prepared information that</p>
+  <a href="#">Learn more></a>
+</div>
+</div>
+   </div>
+   <div class="contact">
+     <p>contact us</p>
+     <form class="contact_form">
+      <label for="name">Name*</label>
+      <input class="name" type="text" name="name">
+         <label for="email">Email*</label>
+         <input class="email" type="email" name="email">
+        <label for="phone">Phone number*</label>
+        <input  class="phone" type="tel" name="customerPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        <label for="text">Describe your project</label>
+        <textarea class="text"></textarea>
+      <button type="Submit" class="submit">Contact us</button>
+      </form>
+   </div>
+ </div>
+ <footer>
+   
+    <div class="logoUnder">
+     <a class='logoImg' href="#"><img src="image/logo1.png" alt="logo"></a> 
+      <a  style = "display: block;"
+      href="#">Sitemap</a>
+      <a href="#">Privacy Policy. All rights reserved</a>
+  </div>
+   <div class="socialAlvarium">
+     <a href="#"><img src="image/fb.png" alt="facebook"></a>
+     <a href="#"><img src="image/in.png" alt="linkedIn"></a>
+     <p>© 2020 AlvariumSoft</p>
+   </div>
+   <div class="info">
+     <p>Contact info</p>
+     <a href="mailto:max.linnik@alvariumsoft.com">max.linnik@alvariumsoft.com</a>
+     <p>+1(513)7254767</p>
+   </div>
+ </footer>
+ </div>
+<script src="script.js"></script>
+</body>
+</html>

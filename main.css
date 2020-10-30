@@ -1,0 +1,1589 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+header {
+    width: 100%;
+    min-height: 100px;
+    background: #052246; 
+    position: fixed;
+    top:0;
+    z-index: 5;
+    transition: all .3s ease;
+}
+#header.out {
+    transform: translateY(-100%)
+}
+.logo {
+    float: left;
+    padding: 15px 30px;
+    position: relative;
+}
+.logo::after{
+    content: "AlvariumSoft";
+    position: absolute;
+    bottom: 20%;
+    left: 65%;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size: 24px;
+
+}
+#menu {
+    float: right;
+    margin: 0 30px;
+}
+#menu > li {
+    display: inline-block;
+    padding: 30px 15px;
+    position: relative;
+}
+#menu > .undermenu > a::after {
+    content: "";
+    position: absolute;
+    bottom: 35%;
+    right:-15%;
+    width:7px;
+    height: 7px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(45deg);
+
+}
+#menu> li:nth-child(2):hover a:after{
+    bottom: 10%;
+    border-bottom: 2px solid #ffc420;
+    border-right: 2px solid #ffc420;
+    transform: rotate(-135deg);
+ 
+}
+.menu-item {
+    position: relative;
+    cursor: pointer;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 0.42px;
+    text-decoration: none;
+}
+.menu-item:hover {
+    color:#ffc420;
+    border-bottom: 1px solid #ffc420;
+}
+.btn-quote {
+    font-size:16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background:#ffc420;
+}
+.btn-quote:hover {
+    color: #fff;
+    border:none;
+}
+.secondmenu {
+    display: none;
+    position: absolute;
+    width:100%;
+    bottom: -20%;
+    margin-top: 40px;
+}
+#menu > li:nth-child(2):hover .secondmenu {
+    margin-top: 15px;
+    display: block;
+}
+.secondmenu > li {
+    padding-top: 5px;
+}
+.secondmenu>li > a {
+    cursor: pointer;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 0.42px;
+    text-decoration: none;
+}
+.secondmenu>li > a:hover {
+    color:#ffc420;
+}
+.btn {
+    opacity: 0;
+}
+.popup {
+    position: fixed;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+    top:0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+.popup_body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+.popup_content {
+    position: relative;
+ background: #ffc420 url(image/sotas1.png) no-repeat 95% 90%;
+ color: black;
+ max-width: 80%;
+ padding: 30px;
+}
+.popup_title {
+    margin: 10px auto;
+}
+.popup_close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    transition: rotate(60deg)
+}
+
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+.popup_area{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.popup_text {
+    position: relative;
+    margin-bottom: 20px;
+}
+.popup_text > p {
+    color: rgba(244,248,249,.21);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5.8vw;
+}
+.question {
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 0;
+    right: 0;
+}
+.popup_text > .question > h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5vw;
+    color: #052246;
+    margin: 10px auto;
+} 
+.popup_form {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+.popup_form > input {
+    width: 50%;
+    margin-bottom: 16px;
+    height: 50px;
+    padding-left: 10px;
+    border:none;
+    outline: none;
+}
+.popup_form > label {
+    font-family:  'Nunito Sans', sans-serif;
+    font-size: 22px;
+    line-height: 30px;
+    color: #676b71;
+    text-align: left;
+    padding-bottom: 7px;
+    align-self: baseline;
+    margin-left: 25%;
+}
+.popup_form > .submit {
+    width: 200px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 30px;
+    background: #052246;
+    color: #fff;
+    margin-top: 34px;
+}
+.popup_form > .submit:hover {
+    background: linear-gradient(180deg,#254369,#052246);
+}
+.wrapper {
+    position: relative;
+    margin: 100px auto;
+    overflow: hidden;
+}
+.title {
+    position: relative;
+}
+.title > .bigText {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 14vw;
+    color: hsla(0,0%,79.2%,.58);
+    white-space: nowrap;
+    margin-left: 40px;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 2s ease 0s;
+    
+}
+.title > .active {
+    transform: translateX(0);
+    opacity:1;
+}
+.smallText {
+    position: absolute;
+    bottom: 5%;
+    left: 2%;
+
+}
+.smallText > a {
+    text-decoration: none;
+    font-family: Montserrat;
+    font-weight: 700;
+    color: #052246;
+    font-size: 3.3vw;
+}
+.ourTeam {
+    position: absolute;
+    background: #ffc72c;
+    right: 0;
+    top: 85%;
+    /* z-index: 2; */
+    width: 27%;
+    height: 250%;
+   
+}
+.ourTeam > p {
+    transform: rotate(90deg);
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 1.8vw;
+    line-height: 44px;
+    letter-spacing: .5em;
+    color: #676b71;
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+.slider > li {
+    display: inline-block;
+    position: relative;
+}
+
+.carousel {
+    position: relative;
+}
+.arrow {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 24px;
+    color: black;
+    display: block;
+    cursor: pointer;
+  }
+  
+  .arrow:focus {
+    outline: none;
+  }
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+   right: 0;
+  }
+  .gallery {
+      width: 1100px;
+      position: relative;
+    overflow: hidden;
+    margin-left: 5%;
+    margin-right: 10%;
+  }
+  .gallery ul {
+    width: 9999px;
+    transition: 250ms;
+  }
+
+  .wrapper2 {
+    position: relative;
+    margin: 100px auto;
+    display:flex;
+}
+.title2 {
+    position: relative;
+}
+.title2 > .bigText {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 9vw;
+    color: hsla(0,0%,79.2%,.58);
+    white-space: nowrap;
+    margin-left: 40px;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 2s ease 0s;
+    
+}
+.title2 > .active {
+    transform: translateY(0);
+    opacity:1;
+}
+.title2 > .smallText {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    text-decoration: none;
+    font-family: Montserrat;
+    font-weight: 700;
+    color: #052246;
+    font-size: 4.3vw;
+}
+.blockPhoto {
+    display: flex;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    align-items: flex-start;
+   
+}
+.blockPhoto  > div  {
+    margin-right: 40px;
+    margin-bottom: 50px;
+
+
+}
+.blockPhoto  > .firstphoto {
+    position: relative;
+    border-top: 15px solid #ffc72c;
+    border-left: 15px solid #ffc72c;
+}
+.firstphoto > p {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    font-family: Montserrat;
+    font-weight: 700;
+    line-height: 44px;
+    color: #fff;
+    z-index: 2;
+    padding: 30px;
+    background: url(image/logo1.png) no-repeat 0 80%;
+}
+
+.firstphoto > a > img{
+    transition: transform 2s, filter 1.5s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(90%);   
+}
+.firstphoto > a > img:hover{
+    filter: brightness(100%);
+    transform: scale(1.1);
+}
+.blockPhoto  > .secondphoto {
+    position: relative;
+    border-bottom: 15px solid #ffc72c;
+    border-right: 15px solid #ffc72c;
+}
+.secondphoto > p {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    font-family: Montserrat;
+    font-weight: 700;
+    line-height: 44px;
+    color: #fff;
+    z-index: 2;
+    padding: 30px;
+    background: url(image/logo1.png) no-repeat 90% 0;
+}
+.secondphoto  > a > img {
+    transition: transform 2s, filter 1.5s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(90%);
+}
+.secondphoto > a > img:hover{
+    filter: brightness(100%);
+    transform: scale(1.1);
+}
+.wrapper3 {
+    background: url(image/sotasYel.png) no-repeat 95% 100%;
+}
+.wrapper3 > h2 {
+    margin-right: 50px;
+    font-family: Montserrat;
+    font-weight: 700;
+    text-align: right;
+    color: #052246;
+    line-height: 88px;
+    font-size: 5vw;
+}
+.wrapper3 > .bigText {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 12vw;
+    color: hsla(0,0%,79.2%,.58);
+    white-space: nowrap;
+    margin-left: 40px;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 2s ease 0s;
+    
+}
+.wrapper3 > .active {
+    transform: translateX(0);
+    opacity:1;
+}
+.techno {
+    margin: 0 40px;
+    display: flex;
+}
+.techno > div > h4 {
+    font-size: 48px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+}
+.techno > div > ul > p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    color: #052246;
+    margin-top: 15px;
+}
+.techno > div > ul > li {
+    position: relative;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    padding-left: 40px;
+    line-height: 32px;
+    color: #000;
+
+}
+.react:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -799px -7px;
+}
+.vue:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -725px -14px;
+}
+.angular:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -667px -18px;
+}
+.back {
+    margin-left: 10%;
+}
+.back > h4 {
+    text-align: right;
+}
+.back > div {
+    display: flex;
+
+}
+.back > div > ul {
+    margin-left: 60px;
+}
+.back > div > ul > p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    color: #052246;
+    margin-top: 15px;
+}
+.back > div > ul > li {
+    position: relative;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    padding-left: 40px;
+    line-height: 32px;
+    color: #000;
+justify-content: space-between;
+}
+.flask:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -508px -13px;
+}
+.tornado:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -160px -3px;
+}
+.django:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -77px -5px;
+}
+.laravel:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -614px -16px;
+}
+.symfony:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -559px -15px;
+}
+.yii:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -286px -6px;
+}
+.etc {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.etc > li {
+    padding-left: 10px;
+}
+.node:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -458px -7px;
+}
+.apache:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -112px -6px;
+}
+.mobile {
+    position: relative;
+    margin-left:20%;
+    margin-top: 2%;
+}
+.mobile > h6 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #052246;
+    margin-top: 15px;
+}
+.mobile > p {
+    position: relative;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    padding-left: 40px;
+    line-height: 32px;
+    color: #000;
+
+}
+.swift:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -332px -8px;
+}
+.flutter:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -40px -4px;
+}
+.java:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -371px -11px;
+}
+.kotlin:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -1px -4px;
+}
+.mobile > .bigText {
+    position: absolute;
+    top: 40%;
+    right: 40%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 9vw;
+    color: hsla(0,0%,79.2%,.58);
+    white-space: nowrap;
+    margin-left: 40px;
+    transform:  translateY(-100%) ;
+    opacity: 0;
+    transition: all 2s ease 0s;
+    
+}
+.mobile > .active {
+    transform: rotate(-90deg)  translateX(0);
+    opacity:1;
+}
+.design {
+    position: relative;
+    display: flex;
+    margin-left: 25%;
+    margin-top: 7%;
+}
+.design > p {
+    position: relative;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    padding-left: 40px;
+    line-height: 32px;
+    color: #000;
+}
+.figma:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -411px -8px;
+}
+.photoshop:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -238px -6px;
+}
+.illustrator:before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width:40px;
+    top: 0;
+    left: 0;
+    background: url(image/sprites.png) 0 0;
+    background-position: -196px -6px;
+}
+.design > .bigText {
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 9vw;
+    color: hsla(0,0%,79.2%,.58);
+    white-space: nowrap;
+    margin-left: 40px;
+    transform:  translateY(100%) ;
+    opacity: 0;
+    transition: all 2s ease 0s;
+    
+}
+.design > .active {
+    transform:   translateY(0);
+    opacity:1;
+}
+.wrapper4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+.wrapper4 > .bigText { 
+    position: absolute;
+    right: -10%;
+    top: 45%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 7vw;
+    color: hsla(0,0%,79.2%,.58);
+    white-space: nowrap;
+    margin-left: 40px;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 2s ease 0s;
+    
+}
+.wrapper4 > .active {
+    transform: rotate(90deg) translateY(0);
+    opacity:1;
+}
+
+.wrapper4 > h2 {
+    margin-right: 50px;
+    font-family: 'Montserrat', sans-serif;
+    color: #052246;
+    line-height: 88px;
+    font-size: 48px;
+}
+.industries {
+    display: flex;
+}
+.industries > .column > div > img {
+    max-width: 340px;
+}
+.industries > .column2 > div > img {
+    max-width: 250px;
+}
+.industries > .column3 > div > img {
+    max-width: 300px;
+}
+.column  > div {
+    position: relative;
+    z-index: 2;
+}
+.industries > div > div > p {
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2vw;
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+}
+.industries > div > div > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99%;
+    height: 98%;
+    background: #ffc72c;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.industries > div > div:hover  div {
+    display: flex;
+    z-index: 3;
+}
+.industries > div > div > div > p {
+    margin-top:  10px;
+}
+.industries > div > div > div > p > a {
+    color: #052246;
+    text-decoration: none;
+    font-size: 1.25vw;
+    cursor: pointer;
+  
+}
+.health > p {
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    font-family:'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2vw;
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+}
+.column2  > div {
+    position: relative;
+}
+.column3  > div {
+    position: relative;
+}
+.industries > div > div {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.wrapper5 {
+    position: relative;
+    margin: 100px auto;
+    overflow: hidden;
+}
+.title {
+    position: relative;
+    text-align: right;
+}
+.title > .bigText {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14vw;
+    color: hsla(0,0%,79.2%,.58);
+    white-space: nowrap;
+    margin-left: 40px;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 2s ease 0s;
+    
+}
+.title > .active {
+    transform: translateX(0);
+    opacity:1;
+}
+.smallText {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+
+}
+.smallText > a {
+    text-decoration: none;
+    text-align: right;
+    font-family:'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #052246;
+    font-size: 3.3vw;
+}
+.case {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+.case > div > h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #052246;
+    font-size: 3.3vw;
+}
+.case > div > p {
+    font-size: 2vw;
+    letter-spacing: 0.5px;
+    color: #000;
+    margin-top: 25px;
+}
+.case > div + div {
+  margin-bottom: 5%;
+  transform:  skew(-30deg, 5deg);
+}
+.wrapper6 {
+    position: relative;
+}
+.title6 {
+    position: relative;
+    z-index: 2;  
+} 
+ .wrapper6 > .title6 > h2{ 
+   margin-left: 10%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 8vw;
+    color: black;
+    color: hsla(0,0%,79.2%,.58);
+    white-space: nowrap;
+  
+    
+}
+.wrapper6 > .title6 > p {
+    position: absolute;
+    left: 20%;
+    bottom: 0; 
+    margin-right: 50px;
+    z-index: 1;
+    font-family: 'Montserrat', sans-serif;
+    color: #052246;
+    font-size: 48px;
+}
+.ourClients {
+    position: absolute;
+    background: #ffc72c;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+   
+}
+.ourClients > p {
+    transform: rotate(-90deg);
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 1.8vw;
+    line-height: 44px;
+    letter-spacing: .5em;
+    color: #676b71;
+    position: absolute;
+    top: 40%;
+    left: 0;
+}
+.comments {
+    position: relative;
+    margin: 20px 15%;
+    display: flex;
+  
+}
+.comment {
+    background: #fff;
+width: 45%;
+margin: 15px;
+padding: 15px;
+border: 1px solid #e5e5e5;
+box-shadow: 0 4px 4px rgba(0,0,0,.25);
+}
+.comment > p {
+    padding: 20px;
+    font-size: 1.2vw;
+    line-height: 26px;
+}
+.person > div + div {
+    margin-left: 15px;
+}
+.person {
+    padding-bottom: 10px;
+display: flex;
+
+}
+.person > div + div > p {
+    padding-top: 20px;
+}
+.wrapper7 {
+    overflow: hidden;
+    position: relative;
+  margin: 70px auto;
+  padding-bottom: 100px;
+}
+.wrapper7 > .bigText {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 14vw;
+    color: hsla(0,0%,79.2%,.58);
+    white-space: nowrap;
+    margin-left: 40px;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 2s ease 0s;
+    
+}
+.wrapper7 > .active {
+  
+    transform: translateX(0);
+    opacity:1;
+}
+.articles{
+ width: 50%;
+}
+.article {
+    display: flex;
+    margin-left: 50px;
+    padding-top: 20px;
+   
+}
+.article > div {
+    padding-right: 20px;
+}
+.author > p {
+    padding-bottom: 15px;
+    font-size: 18px;
+    line-height: 30px;
+    max-height: 100px;
+    overflow: hidden;
+   
+}
+.author > a {
+    cursor: pointer;
+    color: #ffc72c;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    float:  right;
+}
+.contact {
+    position: absolute;
+    z-index: 3;
+    background: #cacaca url(image/Group1.png) no-repeat 95% 88%;
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 110%;
+    
+   
+}
+.contact > p {
+    transform: rotate(90deg);
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 1.8vw;
+    line-height: 44px;
+    letter-spacing: .5em;
+    color: #676b71;
+    position: absolute;
+    top: 40%;
+    right: -10%;
+}
+
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+.contact_form > input {
+    width: 50%;
+    margin-bottom: 16px;
+    height: 50px;
+    padding-left: 10px;
+    border:none;
+    outline: none;
+}
+.contact_form > label {
+    font-family:  'Nunito Sans', sans-serif;
+    font-size: 22px;
+    line-height: 30px;
+    color: #676b71;
+    text-align: left;
+    padding-bottom: 7px;
+    align-self: baseline;
+    margin-left: 25%;
+}
+.contact_form >.submit {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    color: #fff;
+    background: #ffc420;
+    border: 1px solid #ffc420;
+    padding: 15px 25px;
+    text-decoration: none;
+    margin-top: 40px;
+    transition: .4s;
+    cursor: pointer;
+}
+.contact_form > .submit:hover {
+    background: linear-gradient(180deg,#ffc420,#e7b428);
+    box-shadow: 0 4px 4px rgba(0,0,0,.15);
+}
+textarea {
+    border:none;
+    width: 50%;
+    height: 80px;
+    resize: none;
+    outline: none;
+    padding: 10px 10px;
+    font-size: 16px;
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    background: #052246;
+    min-height: 100px;
+    padding: 30px 0;
+}
+.logoUnder {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+.logoUnder > a {
+    color:#fff;
+    font-size: 14px;
+    font-family:  'Nunito Sans', sans-serif;
+    padding-bottom: 10px;
+}
+.logoImg {
+    position: relative;
+}
+.logoImg::after{
+    content: "AlvariumSoft";
+    position: absolute;
+    bottom: 20%;
+    left: 25%;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size: 24px;
+}
+.socialAlvarium {
+    margin-top: 20px;
+}
+.socialAlvarium > a {
+margin-left: 20px;
+}
+.socialAlvarium > p {
+    font-family:  'Nunito Sans', sans-serif;
+    padding-top: 10%;
+    font-size: 16px;
+    line-height: 30px;
+    color: #f4f8f9;
+}
+.info {
+    margin-right: 50px;
+    text-align: right;
+}
+.info > p {
+    font-family:  'Nunito Sans', sans-serif;
+    font-size: 18px;
+    line-height: 36px;
+    color: #fff;
+}
+.info > a {
+    font-family:  'Nunito Sans', sans-serif;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 36px;
+    color: #fff;
+}
+#mobMenu {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    #menu {
+        display: none;
+    }
+   .btn {
+       position: relative;
+       z-index: 5;
+       margin: 30px 20px;
+   float: right;
+   opacity: 1;
+   background: none;
+   border: none;
+   cursor: pointer;
+   }
+   #mobMenu {
+       align-items: flex-end;
+       justify-content: center;
+       overflow: hidden;
+       position: fixed;
+       width: 100%;
+       height: 100vh;
+        left: 0;
+       background: #052246 url(image/sotasYel.png) no-repeat 90% 90%;
+       z-index: 5;
+       max-height: 85vh;
+       padding-bottom: 15px;
+       transform: translateY(70px);
+   }
+   #mobMenu > ul {
+       margin: 120px auto;
+   }
+   #mobMenu > ul > li {
+       font-size: 24px;
+       line-height: 48px;
+       margin-right: 0;
+       padding-bottom: 15px;
+       font-weight: 700;
+       text-align: center;
+       position: relative;
+     
+   }
+   #mobMenu > ul > li > a {
+       font-family: 'Nunito Sans', sans-serif;
+       text-decoration: none;
+       color: #fff;
+   }
+   .underMenuMob {
+       position: relative;
+   }
+   .underMenuMob::before {
+       content: ">";
+       position: absolute;
+       width: 10px;
+       height: 10px;
+       top: 0;
+       left: 60%;
+       color: #fff;
+   }
+ 
+   .secondmenuMob > li > a {
+    font-family: 'Nunito Sans', sans-serif;
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+   }
+   .btn-quote {
+       padding: 10px 35px;
+   }
+   .popup {
+       z-index: 6;
+   }
+   .info {
+       text-align: center;
+       margin: 0;
+   }
+   .animation > img{
+max-width: 1000px;
+   }
+   .socialAlvarium {
+       text-align: center;
+   }
+   
+   .gallery {
+       margin-left: 15%;
+       width: 600px;
+   }
+ .slider > li > img {
+     width: 300px;
+ }
+   .wrapper2 {
+       /* overflow: hidden; */
+       padding: 110px 0;
+   }
+   .title2 > .bigText {
+       font-size: 12vw;
+   }
+   .title2 > .smallText {
+       font-size: 6vw;
+       left: 10%;
+   }
+   .blockPhoto {
+       width: 75%;
+       top: 40%;
+       flex-wrap: wrap;
+   }
+   .blockPhoto > div {
+       margin-bottom: 10px;
+   }
+   .firstphoto > a > img {
+    width: 200px;
+   }
+.firstphoto > p {
+    top: 0;
+   line-height: 15px;
+}
+   .secondphoto > a > img {
+    width: 200px;
+}
+.secondphoto > p {
+    top: 10%;
+}
+.wrapper3 {
+    background: #fff;
+    overflow: hidden;
+    padding-bottom: 10%;
+}
+.techno > div > h4 {
+    font-size: 4.5vw;
+    line-height: 49px;
+}
+.back {
+    margin-left: 0;
+}
+.back > h4 {
+    text-align: center;
+}
+.design {
+    margin-left: 5%;
+    margin-top: -10%;
+}
+.design > .bigText {
+    font-size: 14vw;
+    left: -5%;
+    bottom:35%;
+}
+.mobile {
+    margin-left: 5%;
+    margin-top: 10%;
+}
+.mobile > .bigText {
+    left: 50%;
+    top: 70%;
+    font-size: 16vw;
+}
+.wrapper4 {
+    margin-left: 5%;
+}
+.wrapper4 > h2 {
+ font-size: 44px;
+}
+.wrapper4 > .bigText {
+    display: none;
+}
+.industries > .column > div > img {
+    max-width: 260px;
+}
+.industries > .column2 > div > img {
+    max-width: 190px;
+}
+.industries > .column3 > div > img {
+    max-width: 234px;
+}
+
+.articles {
+    width: 90%;
+}
+.comments {
+    margin: 20px;
+}
+.person > div + div > p {
+    font-size: 12px; 
+}
+.wrapper7 > .active {
+    transform: translateX(0);
+    opacity: 1;
+}
+.wrapper7 > .bigText {
+ font-size: 20vw;
+}
+.contact {
+    position: relative;
+    width: 80%;
+    margin: 5% 10% 0 10%;
+    padding: 5% 0;
+}
+.contact > p {
+    font-size: 3vw;
+    right: -5%;
+}
+   }
+
+   @media screen and (max-width: 480px) {
+    .animation > img {
+        max-width: 500px;
+    }
+    .gallery {
+        width: 300px;
+    }
+    .wrapper3 {
+        position: relative;
+    }
+    .wrapper3 > .bigText {
+        font-size: 18vw;
+        position: absolute;
+        right: 20%;
+        top: 15%;
+    }
+    .techno {
+        display: block;
+    }
+    .techno > div > ul > p {
+        font-size: 18px;
+        margin-top: 0;
+    }
+    .techno > div > h4 {
+        font-size: 5.5vw;
+    }
+    .techno > div > ul > li {
+        font-size: 16px;
+    }
+    .back > div > ul > p {
+        font-size: 18px;
+        margin-top: 0; 
+    }
+    .back > div > ul {
+        margin-left: 0;
+    }
+    .mobile > h6 {
+        font-size: 18px;
+        margin-top: 0;
+    }
+    .mobile > p {
+        font-size: 16px;
+       
+    }
+    .design > p {
+        font-size: 16px;
+        margin-top: 15%;
+    }
+    .industries {
+        flex-wrap: wrap;
+    }
+    .column3 {
+        display: flex;
+    }
+    .industries > .column > div > img {
+        max-width: 170px;
+    }
+    .industries > .column2 > div > img {
+        max-width: 130px;
+    }
+    .industries > .column3 > div > img {
+        max-width: 170px;
+        max-height: 100px;
+    }
+    .articles {
+        width: 100%;
+    }
+    .article {
+        margin-left: 0;
+    }
+    .wrapper4 > h2 {
+        font-size: 18px;
+    }
+    .case > div + div {
+        width: 70%;
+    }
+    .author > p {
+        padding-bottom: 10px;
+        font-size: 16px;
+        max-height: 50px;
+    }
+    .article > div > img {
+        width: 120px;
+        max-height: 120px;
+    }
+    .wrapper6 > .title6 > p {
+        font-size: 20px;
+    }
+    .person > div + div > p {
+        font-size: 8px;
+        padding-top: 5px;
+    }
+    .comment {
+        margin: 5px;
+    }
+    .comment > div > div > img {
+        width: 80px;
+    }
+    .comment > p {
+        line-height: 12px; 
+    }
+    .wrapper7 {
+        margin: 0;
+    }
+    .contact {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .contact_form {
+        align-items: flex-start;
+        margin-left: 10px;
+    }
+    .contact_form > input {
+        width: 80%;
+        height: 40px;
+    }
+    .contact_form > label {
+        margin-left: 0;
+    }
+    textarea {
+        width: 80%;
+    }
+    .contact_form > .submit {
+        padding: 15px 95px;
+    }
+    .contact > p {
+        font-size: 6vw;
+        right: -20%;
+    }
+    footer {
+        display: block;
+    }
+    .logoUnder {
+        display: none;
+    }
+    .socialAlvarium {
+        display: none;
+    }
+   }
